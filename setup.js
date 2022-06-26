@@ -37,7 +37,10 @@ const sortUpdatedPackageJsonProps = {
   }), {})
 };
 fs.writeFileSync("package.json", JSON.stringify(sortUpdatedPackageJsonProps, null, 2));
+execSync("mkdir .vscode -p");
+execSync("cp ./bootstrap-cra-typescript/.vscode/settings.json .vscode/");
 execSync("git reset");
+execSync("git add .vscode/settings.json");
 execSync("git add package.json");
 execSync("git add yarn.lock");
 execSync("git add .eslintrc.json");
