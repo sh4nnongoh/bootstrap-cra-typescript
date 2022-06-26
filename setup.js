@@ -39,6 +39,7 @@ const sortUpdatedPackageJsonProps = {
 fs.writeFileSync("package.json", JSON.stringify(sortUpdatedPackageJsonProps, null, 2));
 execSync("git reset");
 execSync("git add package.json");
+execSync("git add yarn.lock");
 execSync("git add .eslintrc.json");
 execSync("git commit -m '[config] enable airbnb, typescript, and jest esLint'");
 execSync("yarn prepare");
