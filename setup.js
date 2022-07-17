@@ -1,5 +1,10 @@
 const { execSync } = require("child_process");
 const fs = require("fs");
+execSync("rm ./src/index.tsx");
+execSync("cp ./bootstrap-cra-typescript/index.tsx ./src/index.tsx");
+execSync("git reset");
+execSync("git add ./src/index.tsx");
+execSync("git commit -m '[config] enable React 18 support'");
 execSync("rm -rf .husky");
 execSync("cp ./bootstrap-cra-typescript/.eslintrc.json ./.eslintrc.json");
 execSync("yarn add install-peerdeps");
