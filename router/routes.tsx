@@ -4,6 +4,7 @@ import App from "./App";
 const MyRoutes: FC = () => (
   <Routes>
     <Route path="/" element={<App />} />
+    <Route path="/example" element={<div>example</div>} />
     <Route path="*" element={<Navigate replace to="/" />} />
   </Routes>
 );
