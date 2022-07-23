@@ -51,8 +51,10 @@ const srcPath = `${process.cwd()}/src`;
 const testFiles = getTestFilesFromDir([], srcPath);
 testFiles.forEach((filePath) => {
   const file = fs.readFileSync(filePath, { encoding: "utf8" });
+  const appRelativePath = file.match(/import App from .*/g)[0].match(/".*\/App";/g)[0];
+  const relativePath = appRelativePath.substring(1, appRelativePath.length - 6);
   const updatedFile = file
-    .replace("import App from \"./App\";", "import { BrowserRouter } from \"react-router-dom\";\nimport Routes from \"./routes\";")
+    .replace(/import App from .*/g, `import { BrowserRouter } from \"react-router-dom\";\nimport Routes from \"${relativePath}/routes\";`)
     .replace("<App />", "<BrowserRouter><Routes /></BrowserRouter>");
   fs.writeFileSync(filePath, updatedFile);
 });
