@@ -12,5 +12,5 @@ execSync("git add postcss.config.js");
 execSync("git add tailwind.config.js");
 execSync("git add package.json");
 execSync("git add yarn.lock");
-execSync("git commit -m '[config] enable tailwindcss'");
+execSync("git commit -m 'cfg: enable tailwindcss'");
 

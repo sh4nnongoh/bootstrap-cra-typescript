@@ -66,4 +66,4 @@ execSync("git add src/App.tsx");
 testFiles.forEach((file) => {
   execSync(`git add ${file}`);
 });
-execSync("git commit -m '[config] add react-router with react-snap'");
+execSync("git commit -m 'cfg: add react-router with react-snap'");

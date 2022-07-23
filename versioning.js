@@ -17,4 +17,4 @@ execSync("git reset");
 execSync("git add .husky/pre-commit");
 execSync("git add package.json");
 execSync("git add scripts/update-version.js");
-execSync("git commit -m '[config] enable versioning'");
+execSync("git commit -m 'cfg: enable versioning'");
